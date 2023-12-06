@@ -6,7 +6,24 @@
     <meta name="description" content="A personalized dashboard created with HTML, CSS and vanilla JS!"/>
     <title>The Dashboard</title>
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <script src="./script/script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div id="time" class="small-dash">Tid och datum</div>
+    <h1>Your Dashboard</h1>
+    <div class="main-dash">
+      <section id="links" class="dash"><h2>Snabblänkar</h2></section>
+      <section id="weather" class="dash"><h2>Dagens väder</h2></section>
+      <section id="blank" class="dash"><h2>[...]</h2></section>
+      <section id="notes" class="dash"><h2>Anteckningar</h2></section>
+    </div>
+    <div id="background" class="small-dash">
+      <!-- rotate svg -->
+      <svg class="svg-rotate" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#000000" d="M386.3 160H336c-17.7 0-32 14.3-32 32s14.3 32 32 32H464c17.7 0 32-14.3 32-32V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v51.2L414.4 97.6c-87.5-87.5-229.3-87.5-316.8 0s-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3s163.8-62.5 226.3 0L386.3 160z"/></svg>
+      <!-- rotate svg -->
+      Slumpa ny bakgrund</div>
+  </body>
 </html>
