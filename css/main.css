@@ -36,3 +36,11 @@ body {
 .svg-rotate {
     height: 70%;
 }
+
+#notesInput {
+    padding: 0.5rem;
+    resize: none;
+    margin: 1rem;
+    width: 80%;
+    height: 80%;
+}
