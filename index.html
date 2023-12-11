@@ -10,13 +10,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
     <script src="./script/script.js" defer></script>
+    <script src="./script/weather.js" defer></script>
   </head>
   <body>
     <div id="time" class="small-dash">Tid och datum</div>
     <h1 id="editable">Your Dashboard</h1>
     <div class="main-dash">
       <section id="links" class="dash"><h2>Snabblänkar</h2></section>
-      <section id="weather" class="dash"><h2>Dagens väder</h2></section>
+      <section id="weather" class="dash"><h2>Dagens väder</h2>
+      <p id="loc">No current location</p>
+      <p id="temp">? &deg;C</p>
+      <p id="main">No weather information available</p>
+      <p id="desc">...</p></section>
       <section id="blank" class="dash"><h2>[...]</h2></section>
       <section id="notes" class="dash"><h2>Anteckningar</h2>
       <textarea name="notesInput" id="notesInput"></textarea></section>

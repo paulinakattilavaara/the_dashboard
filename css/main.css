@@ -44,3 +44,9 @@ body {
     width: 80%;
     height: 80%;
 }
+
+#weather {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
