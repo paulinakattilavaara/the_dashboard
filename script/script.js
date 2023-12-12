@@ -78,16 +78,24 @@ window.onload = () => {
         newLink.textContent = key;
         newLink.target = "_blank";
 
+        // Create delete button
+        const deleteBtn = document.createElement("button");
+        deleteBtn.classList.add("delete-btn", "delete-btn:hover");
+        deleteBtn.textContent = "Ta bort";
+        // Add event listener so link can be deleted
+         deleteBtn.addEventListener("click", removeLink);
+
         // Add the css to it
         newLink.classList.add("user-link")
-        // Append new link to link section
+        // Append new link and btn to link section
         linkSection.appendChild(newLink);
+        linkSection.appendChild(deleteBtn);
     }
 };
 
 function showInputs() {
-    // Show input boxes for user to fill
-    // Loop through the array and remove the "hidden" class:
+    /* Show input boxes for user to fill by:
+    looping through the array and removing the "hidden" class: */
         hiddenArray.forEach(function(element) {
             element.classList.remove("hidden");
         });
@@ -114,17 +122,31 @@ function addNewLink() {
     newLink.target = "_blank";
     // Store in localStorage
     localStorage.setItem(`${linkValue}`, `${urlValue}`);
-    newLink.classList.add("user-link")
+    newLink.classList.add("user-link");
+    // Create delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("delete-btn", "delete-btn:hover");
+    deleteBtn.textContent = "Ta bort";
     // Display on page
     linkSection.appendChild(newLink);
-    //Hide the inputs
-    // Loop through the array and add the "hidden" class:
+    linkSection.appendChild(deleteBtn);
+    // Add event listener so link can be deleted
+    deleteBtn.addEventListener("click", removeLink);
+    // Loop through the array and add the "hidden" class to the input boxes:
         hiddenArray.forEach(function(element) {
             element.classList.add("hidden");
         });
     }
 
-// Delete link element and
-// Remove from localStorage
+    function removeLink(event) {
+        // Get the link associated with the delete button
+        const link = event.target.previousSibling;
+        const linkValue = link.textContent;
+        // Remove the link from localStorage
+        localStorage.removeItem(`${linkValue}`);
+        // Remove the link and delete button from the page
+        link.remove();
+        event.target.remove();
+    }
 
 /* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ E N D : 3 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
