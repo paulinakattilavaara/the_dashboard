@@ -24,7 +24,7 @@ async function getWeather(lat, long) {
     const div = document.getElementById("img-div");
     // Display different data from the api
     location.textContent = data.name;
-    temp.textContent = data.main.temp.toPrecision(2);
+    temp.innerHTML = data.main.temp.toPrecision(2) + "&deg;";
     desc.textContent = data.weather[0].description;
     const weatherImg = document.createElement("img");
     let icon = data.weather[0].icon;
@@ -32,9 +32,8 @@ async function getWeather(lat, long) {
     div.appendChild(weatherImg);
 
   } else {
-    console.log("Failed to get weather data");
+    console.log(response);
   }
 }
-
 
 /* ~ ~ ~ ~ ~ ~ ~ ~ ~ E N D : 4 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
