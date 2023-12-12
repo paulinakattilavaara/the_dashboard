@@ -60,3 +60,53 @@ body {
 #loc {
     font-size: 1.2rem;
 }
+
+#add-link {
+    border-radius: 10px;
+    padding: 0.4rem;
+    margin: 1.2rem;
+    background-color: rgb(171, 169, 169);
+    border: 0;
+    width: 70%;
+    color: white;
+    align-self: center;
+}
+
+#add-link:hover {
+    color: rgb(217, 214, 214);
+}
+
+.plus-svg {
+    height: 0.8rem;
+}
+
+#links, .hidden-section {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0.3rem;
+}
+
+#links input {
+    width: 50%;
+    align-self: center;
+}
+
+#submit {
+    width: 40%;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    align-self: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.user-link {
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    align-self: center;
+}

@@ -49,3 +49,82 @@ const newDay = new Date();
 todaysDate.innerHTML = newDay.toLocaleDateString();
 
 /* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ E N D : 1 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
+
+/* ~ ~ NUMBER 3: LINKS THAT CAN BE ADDED AND DELETED ~ ~ */
+
+// Add connection to add link button
+const linkButton = document.getElementById("add-link");
+// Add function on click
+linkButton.addEventListener("click", showInputs);
+
+const hidden = document.getElementsByClassName("hidden");
+const hiddenArray = Array.from(hidden);
+
+window.onload = () => {
+    // Get the link section
+    const linkSection = document.getElementById("links");
+
+    for (let i = 0; i < localStorage.length; i++) {
+        // Get key in localStorage
+        let key = localStorage.key(i);
+
+        // Get value in localStorage
+        let value = localStorage.getItem(key);
+
+        // Create new link and set href, title and content values
+        const newLink = document.createElement("a");
+        newLink.href = value;
+        newLink.title = key;
+        newLink.textContent = key;
+        newLink.target = "_blank";
+
+        // Add the css to it
+        newLink.classList.add("user-link")
+        // Append new link to link section
+        linkSection.appendChild(newLink);
+    }
+};
+
+function showInputs() {
+    // Show input boxes for user to fill
+    // Loop through the array and remove the "hidden" class:
+        hiddenArray.forEach(function(element) {
+            element.classList.remove("hidden");
+        });
+    }
+
+// Create connection to submit button 
+const submit = document.getElementById("submit");
+submit.addEventListener("click", addNewLink);
+
+
+function addNewLink() {
+     // Create connection to links section
+     const linkSection = document.getElementById("links");
+    // Get values from the inputs
+    const linkName = document.getElementById("link-name");
+    const linkUrl = document.getElementById("link-url");
+    const linkValue = linkName.value;
+    const urlValue = linkUrl.value;
+    // Create new link and set href, title and content values
+    const newLink = document.createElement("a");
+    newLink.href = urlValue;
+    newLink.title = linkValue;
+    newLink.textContent = linkValue;
+    newLink.target = "_blank";
+    // Store in localStorage
+    localStorage.setItem(`${linkValue}`, `${urlValue}`);
+    newLink.classList.add("user-link")
+    // Display on page
+    linkSection.appendChild(newLink);
+    //Hide the inputs
+    // Loop through the array and add the "hidden" class:
+        hiddenArray.forEach(function(element) {
+            element.classList.add("hidden");
+        });
+    }
+
+// Delete link element and
+// Remove from localStorage
+
+/* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ E N D : 3 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
