@@ -9,11 +9,7 @@ editable.contentEditable = true;
 // Saving the edited text in LocalStorage.
 editable.oninput = () => {localStorage.setItem("text", editable.innerHTML)};
 
-// Load saved text from localStorage when page loads.
-window.onload = () => {
-    let editedText = localStorage.getItem("text");
-    editable.innerHTML = editedText;
-};
+// Load saved text from localStorage when page loads. DOWN IN THE WINDOW.ONLOAD()
 /* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ E N D : 2 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
 
 
@@ -61,12 +57,25 @@ const hidden = document.getElementsByClassName("hidden");
 const hiddenArray = Array.from(hidden);
 
 window.onload = () => {
+    // Load saved text from localStorage when page loads.
+    let editedText = localStorage.getItem("text");
+    editable.innerHTML = editedText;
+
+    // Load saved notes when page loads.
+    let editedNotes = localStorage.getItem("notes");
+    notesInput.textContent = editedNotes;
+
     // Get the link section
     const linkSection = document.getElementById("links");
 
     for (let i = 0; i < localStorage.length; i++) {
         // Get key in localStorage
         let key = localStorage.key(i);
+
+        // If key is notes, don't include them
+        if (key === "notes") {
+            continue;
+        }
 
         // Get value in localStorage
         let value = localStorage.getItem(key);
@@ -77,7 +86,7 @@ window.onload = () => {
         newLink.title = key;
         newLink.textContent = key;
         newLink.target = "_blank";
-
+    
         // Create delete button
         const deleteBtn = document.createElement("button");
         deleteBtn.classList.add("delete-btn", "delete-btn:hover");
@@ -92,6 +101,7 @@ window.onload = () => {
         linkSection.appendChild(deleteBtn);
     }
 };
+
 
 function showInputs() {
     /* Show input boxes for user to fill by:
