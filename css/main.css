@@ -21,6 +21,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    justify-content: center;
 }
 
 .dash {
@@ -123,4 +124,25 @@ body {
 
 .delete-btn:hover {
     color: rgb(165, 161, 161);
+}
+
+#bored p {
+    padding: 1rem;
+}
+
+#bored {
+    width: 20%;
+}
+
+#random {
+    font-weight: bold;
+}
+
+#update {
+    margin: 1rem;
+    width: 20%; 
+}
+
+#update:hover {
+    opacity: 80%;
 }
