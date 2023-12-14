@@ -73,7 +73,7 @@ window.onload = () => {
         let key = localStorage.key(i);
 
         // If key is notes, don't include them
-        if (key === "notes") {
+        if (key === "notes" || key === "text") {
             continue;
         }
 
