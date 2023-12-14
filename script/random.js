@@ -12,9 +12,11 @@ async function getApi(url) {
     random.textContent = data.activity;
     // Get connection with the update arrow so it can be updated
     const update = document.getElementById("update");
-    update.addEventListener("click", function() {
-      // Update page when clicked
-      location.reload();
+    update.addEventListener("click", async () => {
+      let data = await getApi(url);
+      if (data) {
+        random.textContent = data.activity;
+      }
     })
     return data;
   } else {

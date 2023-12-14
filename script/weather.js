@@ -28,6 +28,7 @@ async function getWeather(lat, long) {
     desc.textContent = data.weather[0].description;
     const weatherImg = document.createElement("img");
     let icon = data.weather[0].icon;
+    weatherImg.alt = "Weather icon";
     weatherImg.src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     div.appendChild(weatherImg);
 
