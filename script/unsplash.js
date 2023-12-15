@@ -27,13 +27,16 @@ const bg = document.getElementById("background");
 bg.addEventListener("click", async () => {
     data = await getApi(unsplash);
   if (data) { 
-    body.style.background = `url(${data["urls"]["raw"]})`;
+    body.style.background = `url(${data.urls.raw})`;
     body.style.backgroundSize = 'cover';
+    localStorage.setItem("backgroundImg", `url(${data.urls.raw})`);
+    localStorage.setItem("photographer", `${data.user.name}`);
+    localStorage.setItem("photoLink", `url(${data.links.html})`);
     // Add connection to photographer link
     const photographer = document.getElementById("photographer");
     // Get data
-    const photographerName = data["user"]["name"];
-    const photographerLink = data["links"]["html"];
+    const photographerName = data.user.name;
+    const photographerLink = data.links.html;
     // Add class to style link
     photographer.classList.add("unsplash-link");
     // Add link and text on page

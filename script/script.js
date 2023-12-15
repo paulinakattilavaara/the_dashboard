@@ -69,12 +69,28 @@ window.onload = () => {
     // Get the link section
     const linkSection = document.getElementById("links");
 
+    // Get the last used background from unsplash
+    const backgroundImg = localStorage.getItem("backgroundImg");
+    document.body.style.background = backgroundImg;
+    document.body.style.backgroundSize = 'cover';
+    const photographerText = localStorage.getItem("photographer");
+    const photoLink = localStorage.getItem("photoLink");
+    // Add connection to photographer link
+    const photographer = document.getElementById("photographer");
+    // Add class to style link
+    photographer.classList.add("unsplash-link");
+    // Add link and text on page
+    photographer.textContent = `Photo by ${photographerText} on Unsplash`;
+    photographer.target = "_blank";
+    photographer.href = photoLink;
+
+
     for (let i = 0; i < localStorage.length; i++) {
         // Get key in localStorage
         let key = localStorage.key(i);
 
-        // If key is notes, don't include them
-        if (key === "notes" || key === "text") {
+        // If key is X, don't include them
+        if (key === "notes" || key === "text" || key === "backgroundImg" || key === "photographer" || key === "photoLink") {
             continue;
         }
 
