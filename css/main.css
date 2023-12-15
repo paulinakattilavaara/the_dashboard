@@ -30,10 +30,14 @@ body {
 }
 
 .dash, .small-dash {
-    background-color: rgba(223, 218, 218, 0.464);
+    background-color: rgba(168, 167, 167, 0.464);
     border-radius: 10px;
-    padding: 0.8rem;
+    padding: 0.9rem;
     text-align: center;
+}
+
+.dash h2 {
+    margin-bottom: 1.3rem;
 }
 
 .svg-rotate {
@@ -43,7 +47,7 @@ body {
 #notesInput {
     padding: 0.5rem;
     resize: none;
-    margin: 1rem;
+    margin-bottom: 1rem;
     width: 80%;
     height: 80%;
 }
@@ -66,7 +70,7 @@ body {
     border-radius: 10px;
     padding: 0.4rem;
     margin: 1.2rem;
-    background-color: rgb(171, 169, 169);
+    background-color: rgb(137, 135, 135);
     border: 0;
     width: 70%;
     color: white;
@@ -115,7 +119,7 @@ body {
 .delete-btn {
     border-radius: 10px;
     padding: 0.2rem;
-    background-color: rgb(139, 137, 137);
+    background-color: rgb(116, 115, 115);
     border: 0;
     width: 25%;
     color: white;
