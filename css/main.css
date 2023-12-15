@@ -17,6 +17,7 @@ body {
     width: 100vw;
 }
 
+/* main-dash is the div that contains the 4 main sections  */
 .main-dash {
     display: flex;
     flex-direction: row;
@@ -24,11 +25,13 @@ body {
     justify-content: center;
 }
 
+/* all the 4 sections have the class .dash */
 .dash {
     min-width: 20vw;
     min-height: 30vh;
 }
 
+/* small-dash are the smaller boxes like time/date and generate new background */
 .dash, .small-dash {
     background-color: rgba(168, 167, 167, 0.464);
     border-radius: 10px;
@@ -40,6 +43,7 @@ body {
     margin-bottom: 1.1rem;
 }
 
+/* the rotate svg is the one at the bottom for background */
 .svg-rotate {
     height: 70%;
 }
@@ -62,28 +66,33 @@ body {
     gap: 0.5rem;
 }
 
+/* description for the weather */
+#desc {
+    font-size: 1rem;
+}
+
 #desc::first-letter {
     text-transform: capitalize;
 }
 
+/* location */
 #loc {
     font-size: 1.2rem;
 }
- 
+
+/* temperature */
 #temp {
     font-weight: bold;
     font-size: 1.8rem;
 }
 
-#desc {
-    font-size: 1rem;
-}
-
+/* temperature feels like */
 #feels {
     font-style: italic;
     font-size: 1rem;
 } 
 
+/* button for adding link */
 #add-link {
     border-radius: 10px;
     padding: 0.4rem;
@@ -99,10 +108,12 @@ body {
     color: rgb(217, 214, 214);
 }
 
+/* plus svg for add link */
 .plus-svg {
     height: 0.8rem;
 }
 
+/* link section + hidden input section for adding link */
 #links, .hidden-section {
     display: flex;
     flex-flow: column wrap;
@@ -114,6 +125,7 @@ body {
     align-self: center;
 }
 
+/* button for adding link */
 #submit {
     width: 40%;
     padding: 0.2rem;
@@ -148,18 +160,21 @@ body {
     color: rgb(165, 161, 161);
 }
 
-#bored p {
-    padding: 1rem;
-}
-
+/* section for bored api */
 #bored {
     width: 20%;
 }
 
+#bored p {
+    padding: 1rem;
+}
+
+/* random is where the random task text is displayed */
 #random {
     font-weight: bold;
 }
 
+/* svg update is the arrows for loading a new task */
 #update {
     margin: 1rem;
     width: 20%; 
@@ -169,6 +184,7 @@ body {
     opacity: 80%;
 }
 
+/* animation for svg update */
 .rotate {
     animation: rotate 0.4s linear 0.5;
 }
