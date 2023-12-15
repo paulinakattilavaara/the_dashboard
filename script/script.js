@@ -10,6 +10,7 @@ editable.contentEditable = true;
 editable.oninput = () => {localStorage.setItem("text", editable.innerHTML)};
 
 // Load saved text from localStorage when page loads. DOWN IN THE WINDOW.ONLOAD()
+
 /* ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ E N D : 2 ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ */
 
 

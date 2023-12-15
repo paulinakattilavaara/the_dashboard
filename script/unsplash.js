@@ -1,7 +1,5 @@
 /* ~ ~ ~ ~ NUMBER 7 : RANDOM UNSPLASH BACKGROUND ~ ~ ~ ~ */
 
-// const unsplash = `https://api.unsplash.com/photos/random/?client_id=${id}`;
-
 let data;
 const id = "JKTjNuevX2_Psh5BLlJIOPPEKo_d-6QUN4BTSe8xN5w";
 const unsplash = `https://api.unsplash.com/photos/random/?client_id=${id}`;
