@@ -23,10 +23,16 @@ async function getWeather(lat, long) {
     const temp = document.getElementById("temp");
     const desc = document. getElementById("desc");
     const div = document.getElementById("img-div");
+    const feels = document.getElementById("feels");
+    const wind = document.getElementById("wind");
+    const humid = document.getElementById("humid");
     // Display different data from the api
     location.textContent = data.name;
-    temp.innerHTML = data.main.temp.toPrecision(2) + "&deg;";
+    temp.innerHTML = data.main.temp.toPrecision(2) + "&deg;C";
     desc.textContent = data.weather[0].description;
+    feels.innerHTML = `Känns som ${data.main.feels_like.toPrecision(2)} &deg;C`;
+    wind.textContent = `Vindhastighet ${data.wind.speed} m/sek`;
+    humid.textContent = `Luftfuktighet ${data.main.humidity}%`;
     const weatherImg = document.createElement("img");
     let icon = data.weather[0].icon;
     weatherImg.alt = "Weather icon";
