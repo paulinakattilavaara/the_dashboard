@@ -13,11 +13,15 @@ async function getApi(url) {
     // Get connection with the update arrow so it can be updated
     const update = document.getElementById("update");
     update.addEventListener("click", async () => {
+      update.classList.add("rotate");
       let data = await getApi(url);
       if (data) {
         random.textContent = data.activity;
       }
     })
+    update.addEventListener('animationend', () => {
+      update.classList.remove('rotate');
+    });
     return data;
   } else {
     console.log(response);

@@ -11,8 +11,9 @@ navigator.geolocation.getCurrentPosition(async (p) => {
 async function getWeather(lat, long) {
   // Fetch weather api
   // And put lat and long in the api url
+  const id = "cca493cacb80210f58c85b849bef2aeb";
   const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=cca493cacb80210f58c85b849bef2aeb&units=metric&lang=sv`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${id}&units=metric&lang=sv`
   );
   if (response.ok) {
     const data = await response.json();
