@@ -60,7 +60,11 @@ const hiddenArray = Array.from(hidden);
 window.onload = () => {
     // Load saved text from localStorage when page loads.
     let editedText = localStorage.getItem("text");
+    if (editedText) {
     editable.innerHTML = editedText;
+    } else {
+        editable.innerHTML = "The Dashboard";
+    }
 
     // Load saved notes when page loads.
     let editedNotes = localStorage.getItem("notes");
