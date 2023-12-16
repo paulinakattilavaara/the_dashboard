@@ -79,6 +79,8 @@ window.onload = () => {
     document.body.style.backgroundSize = 'cover';
     const photographerText = localStorage.getItem("photographer");
     const photoLink = localStorage.getItem("photoLink");
+
+    if (photographerText || photoLink) {
     // Add connection to photographer link
     const photographer = document.getElementById("photographer");
     // Add class to style link
@@ -87,6 +89,7 @@ window.onload = () => {
     photographer.textContent = `Photo by ${photographerText} on Unsplash`;
     photographer.target = "_blank";
     photographer.href = photoLink;
+    }
 
 
     for (let i = 0; i < localStorage.length; i++) {
