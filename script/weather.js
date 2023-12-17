@@ -28,12 +28,7 @@ async function getWeather(lat, long) {
     const humid = document.getElementById("humid");
     // Display different data from the api
     location.textContent = data.name;
-
-    if (data.main.temp <= 0) {
-      temp.innerHTML = data.main.temp.toPrecision(1) + "&deg;C";
-    } else {
     temp.innerHTML = data.main.temp.toPrecision(2) + "&deg;C";
-    }
     desc.textContent = data.weather[0].description;
     feels.innerHTML = `Känns som ${data.main.feels_like.toPrecision(2)} &deg;C`;
     wind.textContent = `Vindhastighet ${data.wind.speed} m/sek`;
